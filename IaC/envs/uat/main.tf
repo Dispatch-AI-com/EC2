@@ -3,15 +3,15 @@
 #######################################################################################
 module "ecr_frontend" {
   source                = "../../modules/ECR"
-  repository_name       = "dispatchai-uat-frontend"
+  repository_name       = "dispatchai-frontend-uat"
 }
 
 module "ecr_backend" {
   source                = "../../modules/ECR"
-  repository_name       = "dispatchai-uat-backend"
+  repository_name       = "dispatchai-backend-uat"
 }
 
 module "ecr_backend_ai" {
   source                = "../../modules/ECR"
-  repository_name       = "dispatchai-uat-backend-ai"
+  repository_name       = "dispatchai-backend-ai-uat"
 }
