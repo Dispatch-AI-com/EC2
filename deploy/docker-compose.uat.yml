@@ -1,0 +1,30 @@
+services:
+  api:
+    image: 381492119078.dkr.ecr.ap-southeast-2.amazonaws.com/dispatchai-backend-uat:${IMAGE_TAG}
+    container_name: dispatchai-api-uat
+    env_file:
+      - .env.uat
+    environment:
+      - SHOW_ERROR_MESSAGE=true
+      - NODE_ENV=uat
+      - LOG_TO_FILE=true
+    ports:
+      - "4000:4000"
+    restart: always
+    networks:
+      - dispatchai-network
+
+  ai:
+    image: 381492119078.dkr.ecr.ap-southeast-2.amazonaws.com/dispatchai-backend-ai-uat:${IMAGE_TAG}
+    container_name: dispatchai-ai-uat
+    env_file:
+      - .env.uat
+    ports:
+      - "8000:8000"
+    restart: always
+    networks:
+      - dispatchai-network
+
+networks:
+  dispatchai-network:
+    driver: bridge
