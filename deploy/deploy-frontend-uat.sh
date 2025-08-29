@@ -7,7 +7,7 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-ECR_URI="381492119078.dkr.ecr.ap-southeast-2.amazonaws.com/dispatchai-uat-frontend"
+ECR_URI="381492119078.dkr.ecr.ap-southeast-2.amazonaws.com/dispatchai-frontend-uat"
 IMAGE_TAG=$1
 CONTAINER_NAME="dispatchai-frontend-uat"
 HOST_PORT=3000
